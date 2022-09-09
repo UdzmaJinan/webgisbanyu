@@ -184,88 +184,88 @@
 
     L.control.layers(baseMaps, overlayMaps, {collapsed: false}).addTo(map);
 
-    // /* Scale Bar */
-    // L.control.scale({
-    // maxWidth: 150,position:'bottomright'
-    // }).addTo(map);
+    /* Scale Bar */
+    L.control.scale({
+    maxWidth: 150,position:'bottomright'
+    }).addTo(map);
 
-    // /*Plugin Geolocation*/
-    // var locateControl = L.control.locate({
-    //         position: "topleft",
-    //         drawCircle: true,
-    //         follow: true,
-    //         setView: true,
-    //         keepCurrentZoomLevel: false,
-    //         markerStyle: {
-    //             weight: 1,
-    //             opacity: 0.8,
-    //             fillOpacity: 0.8,
-    //         },
-    //         circleStyle:{
-    //             weight: 1,
-    //             clickable: false,
-    //         },
-    //         icon: "fas fa-crosshairs",
-    //         metric: true,
-    //         strings: {
-    //             title: "Click for Your Location",
-    //             popup: "You're here. Accuracy {distance} {unit}",
-    //             outsideMapBoundsMsg: "Not available"
-    //         },
-    //         locateOptions: {
-    //             maxZoom: 16,
-    //             watch: true,
-    //             enableHighAccuracy: true,
-    //             maximumAge: 10000,
-    //             timeout: 10000
-    //         },
-    //     }).addTo(map);
+    /*Plugin Geolocation*/
+    var locateControl = L.control.locate({
+            position: "topleft",
+            drawCircle: true,
+            follow: true,
+            setView: true,
+            keepCurrentZoomLevel: false,
+            markerStyle: {
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.8,
+            },
+            circleStyle:{
+                weight: 1,
+                clickable: false,
+            },
+            icon: "fas fa-crosshairs",
+            metric: true,
+            strings: {
+                title: "Click for Your Location",
+                popup: "You're here. Accuracy {distance} {unit}",
+                outsideMapBoundsMsg: "Not available"
+            },
+            locateOptions: {
+                maxZoom: 16,
+                watch: true,
+                enableHighAccuracy: true,
+                maximumAge: 10000,
+                timeout: 10000
+            },
+        }).addTo(map);
 
-    // /*Plugin Search */
-    // var searchControl = new L.Control.Search({
-    //         position: "topleft",
-    //         layer: Jalan_Glagah,          //Nama variabel layer
-    //         propertyName: 'Nama',    //Field untuk pencarian
-    //         marker: false,
-    //         moveToLocation: function(latlng, title, map) {
-    //             var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-    //             map.setView(latlng, zoom);
-    //         }
-    //     });
-    //     searchControl.on('search:locationfound', function(e) {
-    //         e.layer.setStyle({
-    //             fillColor: '#ffff00', 
-    //             color: '#0000ff'
-    //         });
-    //     }).on('search:collapse', function(e) {
-    //         Jalan_Glagah.eachLayer(function(layer) {
-    //             Jalan_Glagah.resetStyle(layer);
-    //         });
-    //     });
-    //     map.addControl(searchControl);
+    /*Plugin Search */
+    var searchControl = new L.Control.Search({
+            position: "topleft",
+            layer: Jalan_Glagah,          //Nama variabel layer
+            propertyName: 'Nama',    //Field untuk pencarian
+            marker: false,
+            moveToLocation: function(latlng, title, map) {
+                var zoom = map.getBoundsZoom(latlng.layer.getBounds());
+                map.setView(latlng, zoom);
+            }
+        });
+        searchControl.on('search:locationfound', function(e) {
+            e.layer.setStyle({
+                fillColor: '#ffff00', 
+                color: '#0000ff'
+            });
+        }).on('search:collapse', function(e) {
+            Jalan_Glagah.eachLayer(function(layer) {
+                Jalan_Glagah.resetStyle(layer);
+            });
+        });
+        map.addControl(searchControl);
 
-    // /*Plugin Mouse Position Coordinate */
-    // L.control.mousePosition({position:'bottomright',
-    //     separator: ',',
-    //     prefix: 'Koordinat : '
-    //     }).addTo(map);
+    /*Plugin Mouse Position Coordinate */
+    L.control.mousePosition({position:'bottomright',
+        separator: ',',
+        prefix: 'Koordinat : '
+        }).addTo(map);
 
-    // /*Plugin Measurement Tool*/
-    // var measureControl = new L.Control.Measure({
-    //         position: 'topright',
-    //         primaryLengthUnit:'meters',
-    //         secondaryLengthUnit: 'kilometers',
-    //         primaryAreaUnit: 'hectares',
-    //         secondaryAreaUnit: 'sqmeters',
-    //         activeColor: '#FF0000',
-    //         completedColor: '#00FF00'
-    //     });
-    //     measureControl.addTo(map);
+    /*Plugin Measurement Tool*/
+    var measureControl = new L.Control.Measure({
+            position: 'topright',
+            primaryLengthUnit:'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'hectares',
+            secondaryAreaUnit: 'sqmeters',
+            activeColor: '#FF0000',
+            completedColor: '#00FF00'
+        });
+        measureControl.addTo(map);
 
-    // /*Plugin EasyPrint */
-    // L.easyPrint({
-    //         title: 'Print',
-    //     }).addTo(map); 
+    /*Plugin EasyPrint */
+    L.easyPrint({
+            title: 'Print',
+        }).addTo(map); 
 
     </script>
 </html>
